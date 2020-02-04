@@ -13,7 +13,8 @@ namespace ProductsApp
         {
             foreach (var p in container.Products)
             {
-                Console.WriteLine("{0} {1} {2}", p.Name, p.Price, p.Category);
+                System.Diagnostics.Debug.WriteLine("{0} {1} {2}", p.Name, p.Price, p.Category);
+                //Console.WriteLine("{0} {1} {2}", p.Name, p.Price, p.Category);
             }
         }
 
@@ -23,7 +24,8 @@ namespace ProductsApp
             var serviceResponse = container.SaveChanges();
             foreach (var operationResponse in serviceResponse)
             {
-                Console.WriteLine("Response: {0}", operationResponse.StatusCode);
+                System.Diagnostics.Debug.WriteLine("Response: {0}", operationResponse.StatusCode);
+                //Console.WriteLine("Response: {0}", operationResponse.StatusCode);
             }
         }
 

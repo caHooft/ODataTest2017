@@ -8,11 +8,14 @@ namespace ODataTest2017.Models
 {
     public class ProductsContext : DbContext
     {
+        
         public ProductsContext()
                 : base("name=ProductsContext")
         {
 
         }
         public DbSet<Product> Products { get; set; }
+        
+        public DbSet<Supplier> Suppliers { get; set; }
     }
 }
