@@ -29,8 +29,7 @@ namespace ProductsApp
 
         static void Main(string[] args)
         {
-            // TODO: Replace with your local URI.
-            string serviceUri = "http://localhost:50927";
+            string serviceUri = "50927";
             var container = new Default.Container(new Uri(serviceUri));
 
             var product = new ODataTest2017.Models.Product()

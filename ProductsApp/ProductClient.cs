@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generation date: 4-2-2020 13:31:46
+// Generation date: 4-2-2020 14:03:10
 namespace ProductsApp.ODataTest2017.Models
 {
     /// <summary>
