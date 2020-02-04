@@ -11,24 +11,16 @@ namespace ODataTest2017
     public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
-        {/*
-            //Standart Code
-            // Web API configuration and services
-            // Web API routes
-            config.MapHttpAttributeRoutes();
-
-            config.Routes.MapHttpRoute
-            (
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
-            */
-            //Code I added
+        {
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Product>("Products");
+
             builder.EntitySet<Supplier>("Suppliers");
             config.MapODataServiceRoute("ODataRoute", null, builder.GetEdmModel());
+
+            builder.Namespace = "ODataTest2017";
+            builder.EntityType<Product>() .Action("Rate") .Parameter<int>("Rating");
+
         }
     }
 }
