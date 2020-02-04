@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Http;
 using ODataTest2017.Models;
 using Microsoft.AspNet.OData.Builder;
 using Microsoft.AspNet.OData.Extensions;
-using System.Web.Http;
 
 namespace ODataTest2017
 {
@@ -12,24 +12,27 @@ namespace ODataTest2017
     {
         public static void Register(HttpConfiguration config)
         {
-            //Standart
-            /*
+            //Standart Code
+            // Web API configuration and services
+            // Web API routes
             config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(
+            config.Routes.MapHttpRoute
+            (
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-            */
-            // New code:
+
+            //Code I added
             ODataModelBuilder builder = new ODataConventionModelBuilder();
             builder.EntitySet<Product>("Products");
-            config.MapODataServiceRoute(
+            config.MapODataServiceRoute
+                (
                 routeName: "ODataRoute",
                 routePrefix: null,
-                model: builder.GetEdmModel());
-
+                model: builder.GetEdmModel()
+                );
         }
     }
 }
